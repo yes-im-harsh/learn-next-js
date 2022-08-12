@@ -7,12 +7,11 @@ import { useRouter } from "next/router";
 const Page = () => {
   const router = useRouter();
 
-  const { params } = router.query;
-  console.log(params);
+  const { id } = router.query;
 
   // params === ["a", "b", "c"]
 
-  return <h1>Note: </h1>;
+  return <h1>Note: {id}</h1>;
 };
 
 export default Page;
