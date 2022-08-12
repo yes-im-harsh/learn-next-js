@@ -1,5 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import "../src/styles.module.css";
+
+// import "../src/style.css"; This will throw error.
 
 const Page = () => (
   <div>
