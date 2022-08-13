@@ -1,16 +1,7 @@
-const { PHASE_PRODUCTION_SERVER } = require("next/constants");
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const dotenvLoad = require("dotenv-load")
+const nextEnv = require('next-env')
 
-module.exports = (phase, { defaultConfig }) => {
-  if (phase === PHASE_PRODUCTION_SERVER) {
-    return {
-      ...defaultConfig,
-      webpack: {
-        plugins: [new BundleAnalyzerPlugin()],
-      },
-    };
-  }
+dotenvLoad()
+const withNextEnv = nextEnv()
 
-  return defaultConfig;
-};
+module.exports = withNextEnv()
